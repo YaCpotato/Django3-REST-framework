@@ -16,7 +16,7 @@ class Client(models.Model):
 
 
 class Order(models.Model):
-    number = models.CharField(verbose_name='注文番号',max_length=10,primary_key=True)
+    number = models.AutoField(verbose_name='注文番号',primary_key=True)
     client_number = models.ForeignKey(
         'Client',
         verbose_name='顧客',
