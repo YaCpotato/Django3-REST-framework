@@ -3,8 +3,8 @@
 import django_filters
 from rest_framework import viewsets, filters
 
-from .models import User, Entry
-from .serializer import UserSerializer, EntrySerializer
+from .models import Product,Client,Order
+from .serializer import ProductSerializer, ClientSerializer, OrderSerializer
 
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
