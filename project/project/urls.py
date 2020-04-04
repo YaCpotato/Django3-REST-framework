@@ -17,6 +17,7 @@ Including another URLconf
 
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.urls import path
 
 from myapp.urls import router as myapp_router
 
@@ -24,4 +25,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # blog.urlsをincludeする
     url(r'^api/', include(myapp_router.urls)),
+    path('', include('myapp.urls')),
 ]
