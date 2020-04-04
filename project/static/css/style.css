@@ -4,9 +4,15 @@
 .dd-form{
     width:100%;
     height:20%;
-    border:dashed 5px #343a40;
+    border:dashed 3px #004085;
+    border-radius: 15px;
     text-align: center;
     vertical-align: middle;
-    color:#6c757d;
+    color: #004085;
     margin: 0 auto;
+}
+
+.dd-form:hover{
+    border:dashed 3px #004085;
+    background-color: #cce5ff;
 }
