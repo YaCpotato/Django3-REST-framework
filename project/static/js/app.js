@@ -14,25 +14,6 @@ function getCookie(name) {
   return cookieValue;
 }
 
-var fileArea = document.getElementById('csvArea');
-
-
-fileArea.addEventListener('dragover', function(event){
-  event.preventDefault();
-  fileArea.classList.add('dragover');
-});
-
-fileArea.addEventListener('dragleave', function(event){
-    event.preventDefault();
-    fileArea.classList.remove('dragover');
-});
-fileArea.addEventListener('drop', function(event){
-    event.preventDefault();
-    fileArea.classList.remove('dragenter');
-    var files = evt.dataTransfer.files;
-    fileArea.files = files;
-});
-
 function uploadFile(e) {
   var files = e.target.files;
 
