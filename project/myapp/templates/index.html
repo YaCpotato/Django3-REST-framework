@@ -13,10 +13,12 @@
     <body>
         <h1>Hello</h1>
         <div class="container">
-            <label class="dd-form">
-                <p style="margin-top: 2rem;">ここにファイルをドラッグ&ドロップ<br>または<br>クリックしてアップロード</p>
-                <input class="container-sm" id="csvArea" type="file" onchange="uploadFile(event);" multiple>
-            </label>
+            <form method="post" action="/csv" enctype="multipart/form-data">
+                <label class="dd-form">
+                    <p style="margin-top: 2rem;">ここにファイルをドラッグ&ドロップ<br>または<br>クリックしてアップロード</p>
+                    <input class="container-sm" id="csvArea" type="file" onchange="uploadFile(event);">
+                </label>
+            </form>
         </div>
 
 <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">

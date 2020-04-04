@@ -7,7 +7,8 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    path('csv', views.csv_import, name='csv')
 ]
 
 router = routers.DefaultRouter()

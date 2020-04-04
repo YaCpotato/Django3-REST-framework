@@ -2,13 +2,17 @@
 
 import django_filters
 from rest_framework import viewsets, filters
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 from .models import Product,Client,Order
 from .serializer import ProductSerializer, ClientSerializer, OrderSerializer
 
 def index(request):
     return render(request, 'index.html')
+
+def csv_import(request):
+    print('aaaaaaaaaaaaaa')
+    return redirect('index')
 
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
