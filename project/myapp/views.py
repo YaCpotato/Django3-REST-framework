@@ -7,7 +7,7 @@ from django.shortcuts import render,redirect
 from .models import Product,Client,Order
 from .serializer import ProductSerializer, ClientSerializer, OrderSerializer
 from io import TextIOWrapper
-import csv
+import csv,re
 
 def index(request):
     return render(request, 'index.html')
@@ -17,13 +17,17 @@ def csv_import(request):
         form_data = TextIOWrapper(request.FILES['csv'].file, encoding='utf-8')
         csv_file = csv.reader(form_data)
         
+        result = re.match('(.*)(?=\.)',request.FILES['csv'].name)
+        print(result.group())
         # ヘッダーでバリデーションを行う時に使う... return ['ヘッダー1','ヘッダー2',...]
         next(csv_file)
 
         for line in csv_file:
-            print(line[0])
-            print(line[1])
-            print(line[2])
+            product = Product(
+                number = line[0],
+                name = line[1],
+                price = line[2]
+            )
         
     return redirect('index')
 
