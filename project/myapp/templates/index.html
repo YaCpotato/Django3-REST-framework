@@ -16,7 +16,7 @@
             <form method="post" action="/csv" enctype="multipart/form-data">
                 <label class="dd-form">
                     <p style="margin-top: 2rem;">ここにファイルをドラッグ&ドロップ<br>または<br>クリックしてアップロード</p>
-                    <input class="container-sm" id="csvArea" type="file" onchange="uploadFile(event);">
+                    <input class="container-sm" id="csvArea" name="csv" type="file" onchange="uploadFile(event);">
                 </label>
             </form>
         </div>

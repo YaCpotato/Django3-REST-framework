@@ -24,7 +24,7 @@ function uploadFile(e) {
       XHR.open('POST', '/csv');
       var data = new FormData();
       XHR.setRequestHeader("X-CSRFToken", csrftoken);
-      data.append(files[i].name, files[i]); // ファイル情報を送信データとして設定
+      data.append('csv', files[i], files[i].name); // ファイル情報を送信データとして設定
       XHR.send(data)
   }
   $('.toast').toast('show',delay=1000)

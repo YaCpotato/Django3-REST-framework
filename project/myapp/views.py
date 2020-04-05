@@ -6,12 +6,22 @@ from django.shortcuts import render,redirect
 
 from .models import Product,Client,Order
 from .serializer import ProductSerializer, ClientSerializer, OrderSerializer
+from io import TextIOWrapper
+import csv
 
 def index(request):
     return render(request, 'index.html')
 
 def csv_import(request):
-    print('aaaaaaaaaaaaaa')
+    if 'csv' in request.FILES:
+        form_data = TextIOWrapper(request.FILES['csv'].file, encoding='utf-8')
+        csv_file = csv.reader(form_data)
+
+        for line in csv_file:
+            print(line[0])
+            print(line[1])
+            print(line[2])
+        
     return redirect('index')
 
 class ProductViewSet(viewsets.ModelViewSet):
