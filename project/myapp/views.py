@@ -16,6 +16,9 @@ def csv_import(request):
     if 'csv' in request.FILES:
         form_data = TextIOWrapper(request.FILES['csv'].file, encoding='utf-8')
         csv_file = csv.reader(form_data)
+        
+        # ヘッダーでバリデーションを行う時に使う... return ['ヘッダー1','ヘッダー2',...]
+        next(csv_file)
 
         for line in csv_file:
             print(line[0])
