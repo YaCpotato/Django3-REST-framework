@@ -1,0 +1,36 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/fff52c779c.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <script src="{% static 'js/app.js' %}"></script>
+    </head>
+    <body>
+        <h1>Hello</h1>
+        <div class="container">
+            <form method="post" action="/csv" enctype="multipart/form-data" id="uploadForm">
+                <label class="dd-form">
+                    <p style="margin-top: 2rem;">ここにファイルをドラッグ&ドロップ<br>または<br>クリックしてアップロード</p>
+                    <input class="container-sm" id="csvArea" name="csv" type="file" onchange="uploadFile(event);">
+                </label>
+            </form>
+        </div>
+
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 0; right: 0;">
+    <div class="toast-header">
+      <strong class="mr-auto">Success!</strong>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+        CSVデータをインポートしました
+    </div>
+  </div>
+    </body>
+</html>
