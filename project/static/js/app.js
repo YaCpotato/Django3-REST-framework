@@ -1,3 +1,14 @@
+window.onload = function () {
+  var fileArea = document.getElementById('uploadForm');
+  var fileInput = document.getElementById('csvArea');
+  fileArea.addEventListener('drop', function(evt){
+    evt.preventDefault();
+    fileArea.classList.remove('dragenter');
+    var files = evt.dataTransfer.files;
+    fileInput.files = files;
+  });
+};
+
 function getCookie(name) {
   var cookieValue = null;
   if (document.cookie && document.cookie !== '') {
